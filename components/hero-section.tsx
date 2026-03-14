@@ -74,7 +74,7 @@ export function HeroSection() {
       </div>
 
       {/* Desktop Layout */}
-      <div className="hidden lg:block relative min-h-[60vh] w-full overflow-hidden pt-16 pb-0">
+      <div className="hidden lg:block relative min-h-screen w-full overflow-hidden pt-16 pb-0">
         {/* Background gradient */}
         <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-[#f5f1e8] dark:from-background dark:via-background dark:to-[#1a1a1a]" />
         
@@ -83,7 +83,7 @@ export function HeroSection() {
         <div className="absolute bottom-16 right-10 w-72 h-72 bg-secondary/5 rounded-full blur-3xl" />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[calc(60vh-80px)]">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[calc(100vh-80px)]">
             {/* Left Content */}
             <div
               className={`transition-all duration-1000 ${
