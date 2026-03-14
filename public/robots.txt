@@ -1,0 +1,19 @@
+# Lakira Partners Limited - Robots File
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /.well-known/
+Disallow: /admin/
+
+# Crawl delay (in seconds)
+Crawl-delay: 1
+
+# Sitemap
+Sitemap: https://www.lakirapartners.com/sitemap.xml
+
+# Specific crawler rules
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
