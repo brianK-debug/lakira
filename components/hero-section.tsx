@@ -82,7 +82,7 @@ export function HeroSection() {
         <div className="absolute top-24 left-20 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
         <div className="absolute bottom-24 right-20 w-96 h-96 bg-secondary/5 rounded-full blur-3xl" />
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
+        <div className="relative w-full mx-auto px-4 sm:px-6 lg:px-12 h-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center min-h-[calc(100vh-80px)]">
             {/* Left Content */}
             <div
@@ -94,7 +94,7 @@ export function HeroSection() {
                 Sustainable Growth for Africa's Future
               </h1>
 
-              <p className="text-xl md:text-2xl text-foreground/70 mb-8 max-w-xl leading-relaxed">
+              <p className="text-xl md:text-2xl text-foreground/70 mb-8 max-w-2xl leading-relaxed">
                 We integrate agribusiness and renewable energy to create lasting impact. Empowering farmers, transforming communities, and building a sustainable future.
               </p>
 
@@ -134,7 +134,7 @@ export function HeroSection() {
                 isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
               }`}
             >
-              <div className="relative h-[500px] lg:h-[600px] rounded-2xl overflow-hidden">
+              <div className="relative h-[600px] lg:h-[700px] w-full rounded-2xl overflow-hidden">
                 <OptimizedImage
                   src="/hero-farmer.jpg"
                   alt="Farmer in agricultural field"
@@ -145,7 +145,7 @@ export function HeroSection() {
 
               {/* Floating cards */}
               <div
-                className="absolute -bottom-6 -left-6 p-6 bg-white dark:bg-card rounded-xl shadow-xl border border-border max-w-sm animate-bounce"
+                className="absolute -bottom-8 -left-8 p-6 bg-white dark:bg-card rounded-xl shadow-xl border border-border max-w-sm animate-bounce"
                 style={{ animationDelay: '0s' }}
               >
                 <p className="text-base font-semibold text-foreground mb-2">Renewable Energy</p>
@@ -153,7 +153,7 @@ export function HeroSection() {
               </div>
 
               <div
-                className="absolute top-16 -right-6 p-6 bg-white dark:bg-card rounded-xl shadow-xl border border-border max-w-sm animate-bounce"
+                className="absolute top-20 -right-8 p-6 bg-white dark:bg-card rounded-xl shadow-xl border border-border max-w-sm animate-bounce"
                 style={{ animationDelay: '0.2s' }}
               >
                 <p className="text-base font-semibold text-foreground mb-2">Sustainable Farming</p>
