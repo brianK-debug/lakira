@@ -31,14 +31,7 @@ export function BusinessAreasCards() {
       slug: 'solar-energy',
       color: 'from-secondary/20 to-secondary/10',
     },
-    {
-      image: '/energy.jpg',
-      title: 'Energy Solutions',
-      description: 'Integrated renewable energy solutions combining solar, wind, and storage technologies for reliable power.',
-      href: '/business-areas#renewable-energy',
-      slug: 'renewable-energy',
-      color: 'from-primary/10 to-secondary/10',
-    },
+  
     {
       image: '/irrigation.jpg',
       title: 'Water & Irrigation',
@@ -46,6 +39,14 @@ export function BusinessAreasCards() {
       href: '/business-areas#water-irrigation',
       slug: 'water-irrigation',
       color: 'from-primary/20 to-secondary/20',
+    },
+    {
+      image: '/livestock.png',
+      title: 'Livestock',
+      description: 'Sustainable animal husbandry programs improving livestock health, breeding, and market access for farmers.',
+      href: '/business-areas#livestock',
+      slug: 'livestock',
+      color: 'from-secondary/20 to-primary/10',
     },
   ];
 

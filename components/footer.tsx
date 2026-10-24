@@ -74,19 +74,19 @@ export function Footer() {
               <li className="flex items-start gap-2">
                 <Mail size={16} className="mt-0.5 text-primary flex-shrink-0" />
                 <a
-                  href="mailto:info@lakirapartners.com"
+                  href="mailto:info@lakirapartnersltd.co.ke"
                   className="text-background/80 hover:text-white transition-colors"
                 >
-                  info@lakirapartners.com
+                  info@lakirapartnersltd.co.ke
                 </a>
               </li>
               <li className="flex items-start gap-2">
                 <Phone size={16} className="mt-0.5 text-primary flex-shrink-0" />
                 <a
-                  href="tel:+254712345678"
+                  href="tel:+254712875127"
                   className="text-background/80 hover:text-white transition-colors"
                 >
-                  +254 (0) 712 345 678
+                  0712 875 127
                 </a>
               </li>
               <li className="flex items-start gap-2">

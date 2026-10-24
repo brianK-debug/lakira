@@ -69,6 +69,20 @@ export default function BusinessAreas() {
         'Water quality monitoring',
       ],
     },
+    {
+      id: 5,
+      slug: 'livestock',
+      image: '/livestock.jpg',
+      title: 'Livestock',
+      description: 'Sustainable animal husbandry and livestock management',
+      details: [
+        'Improved breeding programs',
+        'Veterinary health services',
+        'Feed and nutrition management',
+        'Livestock market access',
+        'Sustainable pasture management',
+      ],
+    },
   ];
 
   return (

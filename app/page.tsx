@@ -4,7 +4,6 @@ import { WhatsAppButton } from '@/components/whatsapp-button';
 import { HeroSection } from '@/components/hero-section';
 import { BusinessAreasCards } from '@/components/business-areas-cards';
 import { ImpactCounters } from '@/components/impact-counters';
-import { PartnersCarousel } from '@/components/partners-carousel';
 import { CTASection } from '@/components/cta-section';
 import type { Metadata } from 'next';
 
@@ -23,7 +22,6 @@ export default function Home() {
       <HeroSection />
       <BusinessAreasCards />
       <ImpactCounters />
-      <PartnersCarousel />
       <CTASection />
       <Footer />
       <WhatsAppButton />

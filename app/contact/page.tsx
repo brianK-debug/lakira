@@ -35,14 +35,14 @@ export default function Contact() {
               {
                 icon: <Mail className="w-6 h-6" />,
                 title: 'Email',
-                value: 'info@lakirapartners.com',
-                link: 'mailto:info@lakirapartners.com',
+                value: 'info@lakirapartnersltd.co.ke',
+                link: 'mailto:info@lakirapartnersltd.co.ke',
               },
               {
                 icon: <Phone className="w-6 h-6" />,
                 title: 'Phone',
-                value: '+254 (0) 712 345 678',
-                link: 'tel:+254712345678',
+                value: '0712 875 127',
+                link: 'tel:+254712875127',
               },
               {
                 icon: <MapPin className="w-6 h-6" />,

@@ -104,7 +104,7 @@ export function ContactForm() {
               value={formData.phone}
               onChange={handleChange}
               className="w-full px-4 py-2 rounded-lg border border-border bg-background text-foreground placeholder-foreground/40 focus:outline-none focus:ring-2 focus:ring-primary transition-colors"
-              placeholder="+254 (0) 712 345 678"
+              placeholder="+254 (0) 712 875 127"
             />
           </div>
           <div>
@@ -178,8 +178,8 @@ export function ContactForm() {
             <Mail size={24} />
           </div>
           <p className="text-sm text-foreground/70 mb-1">Email</p>
-          <a href="mailto:info@lakirapartners.com" className="font-medium text-primary hover:underline">
-            info@lakirapartners.com
+          <a href="mailto:info@lakirapartnersltd.co.ke" className="font-medium text-primary hover:underline">
+            info@lakirapartnersltd.co.ke
           </a>
         </div>
         <div className="text-center">
@@ -187,8 +187,8 @@ export function ContactForm() {
             <Phone size={24} />
           </div>
           <p className="text-sm text-foreground/70 mb-1">Phone</p>
-          <a href="tel:+254712345678" className="font-medium text-primary hover:underline">
-            +254 (0) 712 345 678
+          <a href="tel:+254712875127" className="font-medium text-primary hover:underline">
+            0712 875 127
           </a>
         </div>
         <div className="text-center">
