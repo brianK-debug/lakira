@@ -22,8 +22,8 @@ export default function About() {
   const timeline = [
     { year: '2018', event: 'Lakira Partners Limited founded' },
     { year: '2019', event: 'Launched first solar farming initiative' },
-    { year: '2021', event: 'Expanded to 5 African countries' },
-    { year: '2024', event: 'Launched renewable energy hub' },
+    { year: '2021', event: 'Expanded to East African countries' },
+    { year: '2024', event: 'Launched renewable energy' },
   ];
 
   return (

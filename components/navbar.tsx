@@ -7,12 +7,12 @@ import { OptimizedImage } from './optimized-image';
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    if (!isOpen) return;
-
     const handleScroll = () => {
-      setIsOpen(false);
+      setScrolled(window.scrollY > 20);
+      if (isOpen) setIsOpen(false);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -23,49 +23,52 @@ export function Navbar() {
     { label: 'Home', href: '/' },
     { label: 'Products', href: '/products' },
     { label: 'About', href: '/about' },
+    { label: 'Business Areas', href: '/business-areas' },
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-border shadow-sm dark:bg-background/95">
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? 'bg-background/98 backdrop-blur-xl border-b border-border shadow-lg shadow-primary/5'
+          : 'bg-background/80 backdrop-blur-md'
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
+        <div className="flex items-center justify-between h-18 py-2">
+          <Link href="/" className="flex items-center gap-2 group">
             <OptimizedImage
               src="/logo.jpeg"
-              alt="Lakira Logo"
-              className="w-50 h-15 rounded-lg object-cover"
-              width={40}
-              height={40}
+              alt="Lakira Partners Limited"
+              className="h-12 w-auto rounded-lg object-contain transition-transform group-hover:scale-105"
+              width={48}
+              height={48}
             />
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-1">
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors"
+                className="px-4 py-2 rounded-lg text-sm font-medium text-foreground/80 hover:text-primary hover:bg-accent/50 transition-all duration-200"
               >
                 {item.label}
               </Link>
             ))}
           </div>
 
-          {/* CTA Button */}
           <div className="hidden md:flex items-center gap-4">
             <Link
               href="/contact"
-              className="px-6 py-2 rounded-lg bg-primary text-white font-medium text-sm hover:bg-primary/90 transition-colors"
+              className="px-6 py-2.5 rounded-lg bg-primary text-primary-foreground font-medium text-sm hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/25 transition-all duration-300 hover:-translate-y-0.5"
             >
               Get In Touch
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2 text-foreground hover:bg-muted rounded-lg transition-colors"
+            className="md:hidden p-2 text-foreground hover:bg-accent rounded-lg transition-colors"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
           >
@@ -73,15 +76,14 @@ export function Navbar() {
           </button>
         </div>
 
-        {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden border-t border-border bg-background">
-            <div className="px-2 pt-2 pb-3 space-y-1">
+          <div className="md:hidden border-t border-border/50 bg-background/98 backdrop-blur-xl animate-slide-down">
+            <div className="px-2 pt-2 pb-4 space-y-1">
               {navItems.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="block px-3 py-2 rounded-lg text-foreground/80 hover:bg-muted hover:text-primary transition-colors text-sm font-medium"
+                  className="block px-4 py-3 rounded-lg text-foreground/80 hover:bg-accent hover:text-primary transition-all duration-200 text-sm font-medium"
                   onClick={() => setIsOpen(false)}
                 >
                   {item.label}
@@ -89,7 +91,7 @@ export function Navbar() {
               ))}
               <Link
                 href="/contact"
-                className="block px-3 py-2 rounded-lg bg-primary text-white font-medium text-sm mt-2 text-center hover:bg-primary/90 transition-colors"
+                className="block px-4 py-3 rounded-lg bg-primary text-primary-foreground font-medium text-sm mt-3 text-center hover:bg-primary/90 transition-all duration-200"
                 onClick={() => setIsOpen(false)}
               >
                 Get In Touch

@@ -1,132 +1,162 @@
 'use client';
 
 import Link from 'next/link';
-import { Mail, Phone, MapPin, Linkedin, Twitter, Facebook } from 'lucide-react';
+import { Mail, Phone, MapPin, Linkedin, Twitter, Facebook, ArrowUpRight } from 'lucide-react';
+import { OptimizedImage } from './optimized-image';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-foreground text-background pt-20 pb-10">
-      <div className="w-full mx-auto px-6 lg:px-12">
-        {/* Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
-          {/* Brand Column */}
-          <div>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center text-white font-bold text-lg">
-                L
+    <footer className="relative bg-gradient-to-br from-foreground via-foreground to-foreground/95 text-background overflow-hidden">
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-secondary rounded-full blur-3xl" />
+      </div>
+      
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20 pb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-12">
+          <div className="lg:col-span-1">
+            <Link href="/" className="flex items-center gap-3 mb-6 group">
+              <OptimizedImage
+                src="/logo.jpeg"
+                alt="Lakira Partners Limited"
+                className="h-12 w-auto rounded-lg bg-background p-1"
+                width={48}
+                height={48}
+              />
+              <div>
+                <div className="font-serif text-xl font-bold">Lakira Partners</div>
+                <div className="text-xs text-background/70">Limited</div>
               </div>
-              <span className="font-serif text-xl font-bold">Lakira</span>
-            </div>
-            <p className="text-background/80 text-sm">
-              Sustainable agribusiness and renewable energy solutions for a prosperous Africa.
+            </Link>
+            <p className="text-background/80 leading-relaxed mb-6">
+              Sustainable agribusiness and renewable energy solutions driving prosperity across Africa through innovation and community empowerment.
             </p>
+            <div className="flex items-center gap-3">
+              {[
+                { icon: Linkedin, href: '#', label: 'LinkedIn' },
+                { icon: Twitter, href: '#', label: 'Twitter' },
+                { icon: Facebook, href: '#', label: 'Facebook' },
+              ].map((social, index) => {
+                const Icon = social.icon;
+                return (
+                  <a
+                    key={index}
+                    href={social.href}
+                    aria-label={social.label}
+                    className="w-10 h-10 rounded-lg bg-background/10 hover:bg-primary hover:scale-110 flex items-center justify-center transition-all duration-300"
+                  >
+                    <Icon size={18} />
+                  </a>
+                );
+              })}
+            </div>
           </div>
 
-          {/* Quick Links */}
           <div>
-            <h3 className="font-semibold text-white mb-4">Quick Links</h3>
-            <ul className="space-y-2 text-sm">
+            <h3 className="font-semibold text-white mb-6 text-lg">Quick Links</h3>
+            <ul className="space-y-3">
               {[
-                { label: 'About', href: '/about' },
+                { label: 'Home', href: '/' },
+                { label: 'About Us', href: '/about' },
                 { label: 'Business Areas', href: '/business-areas' },
                 { label: 'Products', href: '/products' },
               ].map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-background/80 hover:text-white transition-colors"
+                    className="text-background/80 hover:text-white hover:translate-x-1 inline-flex items-center gap-1 transition-all duration-200 group"
                   >
                     {link.label}
+                    <ArrowUpRight size={14} className="opacity-0 group-hover:opacity-100 transition-opacity" />
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Policies */}
           <div>
-            <h3 className="font-semibold text-white mb-4">Company</h3>
-            <ul className="space-y-2 text-sm">
+            <h3 className="font-semibold text-white mb-6 text-lg">Company</h3>
+            <ul className="space-y-3">
               {[
                 { label: 'Partnerships', href: '/partnerships' },
+                { label: 'Impact', href: '/impact' },
                 { label: 'Contact', href: '/contact' },
-                { label: 'Careers', href: '#careers' },
-                { label: '404', href: '/404' },
+                { label: 'Careers', href: '/contact' },
               ].map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-background/80 hover:text-white transition-colors"
+                    className="text-background/80 hover:text-white hover:translate-x-1 inline-flex items-center gap-1 transition-all duration-200 group"
                   >
                     {link.label}
+                    <ArrowUpRight size={14} className="opacity-0 group-hover:opacity-100 transition-opacity" />
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Contact */}
           <div>
-            <h3 className="font-semibold text-white mb-4">Get In Touch</h3>
-            <ul className="space-y-3 text-sm">
-              <li className="flex items-start gap-2">
-                <Mail size={16} className="mt-0.5 text-primary flex-shrink-0" />
-                <a
-                  href="mailto:info@lakirapartnersltd.co.ke"
-                  className="text-background/80 hover:text-white transition-colors"
-                >
-                  info@lakirapartnersltd.co.ke
-                </a>
+            <h3 className="font-semibold text-white mb-6 text-lg">Get In Touch</h3>
+            <ul className="space-y-4">
+              <li className="flex items-start gap-3 group">
+                <div className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/30 transition-colors">
+                  <Mail size={18} className="text-primary" />
+                </div>
+                <div>
+                  <div className="text-xs text-background/60 mb-1">Email</div>
+                  <a
+                    href="mailto:info@lakirapartnersltd.co.ke"
+                    className="text-background/90 hover:text-white transition-colors text-sm"
+                  >
+                    info@lakirapartnersltd.co.ke
+                  </a>
+                </div>
               </li>
-              <li className="flex items-start gap-2">
-                <Phone size={16} className="mt-0.5 text-primary flex-shrink-0" />
-                <a
-                  href="tel:+254712875127"
-                  className="text-background/80 hover:text-white transition-colors"
-                >
-                  0712 875 127
-                </a>
+              <li className="flex items-start gap-3 group">
+                <div className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/30 transition-colors">
+                  <Phone size={18} className="text-primary" />
+                </div>
+                <div>
+                  <div className="text-xs text-background/60 mb-1">Phone</div>
+                  <a
+                    href="tel:+254712875127"
+                    className="text-background/90 hover:text-white transition-colors text-sm"
+                  >
+                    +254 712 875 127
+                  </a>
+                </div>
               </li>
-              <li className="flex items-start gap-2">
-                <MapPin size={16} className="mt-0.5 text-primary flex-shrink-0" />
-                <span className="text-background/80">
-                  Nairobi, Kenya
-                </span>
+              <li className="flex items-start gap-3 group">
+                <div className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/30 transition-colors">
+                  <MapPin size={18} className="text-primary" />
+                </div>
+                <div>
+                  <div className="text-xs text-background/60 mb-1">Location</div>
+                  <span className="text-background/90 text-sm">
+                    Nairobi, Kenya
+                  </span>
+                </div>
               </li>
             </ul>
           </div>
         </div>
 
-        {/* Divider */}
-        <div className="border-t border-background/20 pt-8 mb-8" />
-
-        {/* Bottom Section */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-background/80">
-            &copy; {currentYear} Lakira Partners Limited. All rights reserved.
-          </p>
-          
-          {/* Social Links */}
-          <div className="flex items-center gap-4">
-            {[
-              { icon: Linkedin, href: '#linkedin', label: 'LinkedIn' },
-              { icon: Twitter, href: '#twitter', label: 'Twitter' },
-              { icon: Facebook, href: '#facebook', label: 'Facebook' },
-            ].map((social, index) => {
-              const Icon = social.icon;
-              return (
-                <a
-                  key={index}
-                  href={social.href}
-                  aria-label={social.label}
-                  className="text-background/80 hover:text-white transition-colors"
-                >
-                  <Icon size={20} />
-                </a>
-              );
-            })}
+        <div className="border-t border-background/20 pt-8">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+            <p className="text-sm text-background/70">
+              &copy; {currentYear} Lakira Partners Limited. All rights reserved.
+            </p>
+            <div className="flex items-center gap-6 text-sm">
+              <Link href="#" className="text-background/70 hover:text-white transition-colors">
+                Privacy Policy
+              </Link>
+              <Link href="#" className="text-background/70 hover:text-white transition-colors">
+                Terms of Service
+              </Link>
+            </div>
           </div>
         </div>
       </div>
